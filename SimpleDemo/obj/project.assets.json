@@ -1,0 +1,716 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.5": {
+      "Fody/6.2.4": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
+        }
+      },
+      "PropertyChanged.Fody/3.2.8": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "6.1.1"
+        },
+        "compile": {
+          "lib/net40/PropertyChanged.dll": {}
+        },
+        "runtime": {
+          "lib/net40/PropertyChanged.dll": {}
+        },
+        "build": {
+          "build/PropertyChanged.Fody.props": {}
+        }
+      },
+      "SharpDX/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SharpDX.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.dll": {}
+        }
+      },
+      "SharpDX.Direct2D1/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.Direct2D1.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.Direct2D1.dll": {}
+        }
+      },
+      "SharpDX.Direct3D11/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.Direct3D11.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.Direct3D11.dll": {}
+        }
+      },
+      "SharpDX.DXGI/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.DXGI.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.DXGI.dll": {}
+        }
+      },
+      "SharpDX.Mathematics/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.Mathematics.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.Mathematics.dll": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ValueTuple.dll": {}
+        }
+      },
+      "ThreeDssViewer/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/ThreeDssViewer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreeDssViewer.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win": {
+      "Fody/6.2.4": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
+        }
+      },
+      "PropertyChanged.Fody/3.2.8": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "6.1.1"
+        },
+        "compile": {
+          "lib/net40/PropertyChanged.dll": {}
+        },
+        "runtime": {
+          "lib/net40/PropertyChanged.dll": {}
+        },
+        "build": {
+          "build/PropertyChanged.Fody.props": {}
+        }
+      },
+      "SharpDX/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SharpDX.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.dll": {}
+        }
+      },
+      "SharpDX.Direct2D1/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.Direct2D1.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.Direct2D1.dll": {}
+        }
+      },
+      "SharpDX.Direct3D11/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.Direct3D11.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.Direct3D11.dll": {}
+        }
+      },
+      "SharpDX.DXGI/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.DXGI.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.DXGI.dll": {}
+        }
+      },
+      "SharpDX.Mathematics/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.Mathematics.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.Mathematics.dll": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ValueTuple.dll": {}
+        }
+      },
+      "ThreeDssViewer/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/ThreeDssViewer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreeDssViewer.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win-x64": {
+      "Fody/6.2.4": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
+        }
+      },
+      "PropertyChanged.Fody/3.2.8": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "6.1.1"
+        },
+        "compile": {
+          "lib/net40/PropertyChanged.dll": {}
+        },
+        "runtime": {
+          "lib/net40/PropertyChanged.dll": {}
+        },
+        "build": {
+          "build/PropertyChanged.Fody.props": {}
+        }
+      },
+      "SharpDX/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SharpDX.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.dll": {}
+        }
+      },
+      "SharpDX.Direct2D1/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.Direct2D1.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.Direct2D1.dll": {}
+        }
+      },
+      "SharpDX.Direct3D11/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.Direct3D11.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.Direct3D11.dll": {}
+        }
+      },
+      "SharpDX.DXGI/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.DXGI.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.DXGI.dll": {}
+        }
+      },
+      "SharpDX.Mathematics/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.Mathematics.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.Mathematics.dll": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ValueTuple.dll": {}
+        }
+      },
+      "ThreeDssViewer/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/ThreeDssViewer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreeDssViewer.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win-x86": {
+      "Fody/6.2.4": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
+        }
+      },
+      "PropertyChanged.Fody/3.2.8": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "6.1.1"
+        },
+        "compile": {
+          "lib/net40/PropertyChanged.dll": {}
+        },
+        "runtime": {
+          "lib/net40/PropertyChanged.dll": {}
+        },
+        "build": {
+          "build/PropertyChanged.Fody.props": {}
+        }
+      },
+      "SharpDX/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SharpDX.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.dll": {}
+        }
+      },
+      "SharpDX.Direct2D1/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.Direct2D1.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.Direct2D1.dll": {}
+        }
+      },
+      "SharpDX.Direct3D11/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0",
+          "SharpDX.DXGI": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.Direct3D11.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.Direct3D11.dll": {}
+        }
+      },
+      "SharpDX.DXGI/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.DXGI.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.DXGI.dll": {}
+        }
+      },
+      "SharpDX.Mathematics/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpDX": "4.2.0"
+        },
+        "compile": {
+          "lib/net45/SharpDX.Mathematics.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpDX.Mathematics.dll": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ValueTuple.dll": {}
+        }
+      },
+      "ThreeDssViewer/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/ThreeDssViewer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThreeDssViewer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Fody/6.2.4": {
+      "sha512": "IHt3dR3i9NjFqqhFzUAwoFbDkOJiarDkZBSrQA3tjAquARMvhamYvnB10/slNLNr4UMc2zY/uHX21aP6mLGaQg==",
+      "type": "package",
+      "path": "fody/6.2.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "build/Fody.targets",
+        "fody.6.2.4.nupkg.sha512",
+        "fody.nuspec",
+        "netclassictask/Fody.dll",
+        "netclassictask/FodyCommon.dll",
+        "netclassictask/FodyHelpers.dll",
+        "netclassictask/FodyIsolated.dll",
+        "netclassictask/Mono.Cecil.Pdb.dll",
+        "netclassictask/Mono.Cecil.Pdb.pdb",
+        "netclassictask/Mono.Cecil.Rocks.dll",
+        "netclassictask/Mono.Cecil.Rocks.pdb",
+        "netclassictask/Mono.Cecil.dll",
+        "netclassictask/Mono.Cecil.pdb",
+        "netstandardtask/Fody.dll",
+        "netstandardtask/FodyCommon.dll",
+        "netstandardtask/FodyHelpers.dll",
+        "netstandardtask/FodyIsolated.dll",
+        "netstandardtask/Mono.Cecil.Pdb.dll",
+        "netstandardtask/Mono.Cecil.Pdb.pdb",
+        "netstandardtask/Mono.Cecil.Rocks.dll",
+        "netstandardtask/Mono.Cecil.Rocks.pdb",
+        "netstandardtask/Mono.Cecil.dll",
+        "netstandardtask/Mono.Cecil.pdb"
+      ]
+    },
+    "PropertyChanged.Fody/3.2.8": {
+      "sha512": "UfhhtFPgbqwx8cpuxdRbz9cuHve2BXEs1DjPAA/4p/TfqnTct3glcUz5MQ/TGDjFxHmO1Dc4ETS+B1Zk38TnbQ==",
+      "type": "package",
+      "path": "propertychanged.fody/3.2.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/PropertyChanged.Fody.props",
+        "lib/net40/PropertyChanged.dll",
+        "lib/net40/PropertyChanged.xml",
+        "lib/netstandard1.0/PropertyChanged.dll",
+        "lib/netstandard1.0/PropertyChanged.xml",
+        "propertychanged.fody.3.2.8.nupkg.sha512",
+        "propertychanged.fody.nuspec",
+        "weaver/PropertyChanged.Fody.dll",
+        "weaver/PropertyChanged.Fody.xcf"
+      ]
+    },
+    "SharpDX/4.2.0": {
+      "sha512": "3pv0LFMvfK/dv1qISJnn8xBeeT6R/FRvr0EV4KI2DGsL84Qlv6P7isWqxGyU0LCwlSVCJN3jgHJ4Bl0KI2PJww==",
+      "type": "package",
+      "path": "sharpdx/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/.xml",
+        "lib/net40/SharpDX.dll",
+        "lib/net40/SharpDX.pdb",
+        "lib/net45/.xml",
+        "lib/net45/SharpDX.dll",
+        "lib/net45/SharpDX.pdb",
+        "lib/netstandard1.1/.xml",
+        "lib/netstandard1.1/SharpDX.dll",
+        "lib/netstandard1.1/SharpDX.pdb",
+        "lib/uap10.0/.xml",
+        "lib/uap10.0/SharpDX.dll",
+        "lib/uap10.0/SharpDX.pdb",
+        "lib/uap10.0/SharpDX.pri",
+        "sharpdx.4.2.0.nupkg.sha512",
+        "sharpdx.nuspec"
+      ]
+    },
+    "SharpDX.Direct2D1/4.2.0": {
+      "sha512": "Qs8LzDMaQf1u3KB8ArHu9pDv6itZ++QXs99a/bVAG+nKr0Hx5NG4mcN5vsfE0mVR2TkeHfeUm4PksRah6VUPtA==",
+      "type": "package",
+      "path": "sharpdx.direct2d1/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SharpDX.Direct2D1.dll",
+        "lib/net40/SharpDX.Direct2D1.pdb",
+        "lib/net40/SharpDX.Direct2D1.xml",
+        "lib/net45/SharpDX.Direct2D1.dll",
+        "lib/net45/SharpDX.Direct2D1.pdb",
+        "lib/net45/SharpDX.Direct2D1.xml",
+        "lib/netstandard1.1/SharpDX.Direct2D1.dll",
+        "lib/netstandard1.1/SharpDX.Direct2D1.pdb",
+        "lib/netstandard1.1/SharpDX.Direct2D1.xml",
+        "lib/uap10.0/SharpDX.Direct2D1.dll",
+        "lib/uap10.0/SharpDX.Direct2D1.pdb",
+        "lib/uap10.0/SharpDX.Direct2D1.pri",
+        "lib/uap10.0/SharpDX.Direct2D1.xml",
+        "sharpdx.direct2d1.4.2.0.nupkg.sha512",
+        "sharpdx.direct2d1.nuspec"
+      ]
+    },
+    "SharpDX.Direct3D11/4.2.0": {
+      "sha512": "oTm/iT5X/IIuJ8kNYP+DTC/MhBhqtRF5dbgPPFgLBdQv0BKzNTzXQQXd7SveBFjQg6hXEAJ2jGCAzNYvGFc9LA==",
+      "type": "package",
+      "path": "sharpdx.direct3d11/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SharpDX.Direct3D11.dll",
+        "lib/net40/SharpDX.Direct3D11.pdb",
+        "lib/net40/SharpDX.Direct3D11.xml",
+        "lib/net45/SharpDX.Direct3D11.dll",
+        "lib/net45/SharpDX.Direct3D11.pdb",
+        "lib/net45/SharpDX.Direct3D11.xml",
+        "lib/netstandard1.1/SharpDX.Direct3D11.dll",
+        "lib/netstandard1.1/SharpDX.Direct3D11.pdb",
+        "lib/netstandard1.1/SharpDX.Direct3D11.xml",
+        "lib/uap10.0/SharpDX.Direct3D11.dll",
+        "lib/uap10.0/SharpDX.Direct3D11.pdb",
+        "lib/uap10.0/SharpDX.Direct3D11.pri",
+        "lib/uap10.0/SharpDX.Direct3D11.xml",
+        "sharpdx.direct3d11.4.2.0.nupkg.sha512",
+        "sharpdx.direct3d11.nuspec"
+      ]
+    },
+    "SharpDX.DXGI/4.2.0": {
+      "sha512": "UjKqkgWc8U+SP+j3LBzFP6OB6Ntapjih7Xo+g1rLcsGbIb5KwewBrBChaUu7sil8rWoeVU/k0EJd3SMN4VqNZw==",
+      "type": "package",
+      "path": "sharpdx.dxgi/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SharpDX.DXGI.dll",
+        "lib/net40/SharpDX.DXGI.pdb",
+        "lib/net40/SharpDX.DXGI.xml",
+        "lib/net45/SharpDX.DXGI.dll",
+        "lib/net45/SharpDX.DXGI.pdb",
+        "lib/net45/SharpDX.DXGI.xml",
+        "lib/netstandard1.1/SharpDX.DXGI.dll",
+        "lib/netstandard1.1/SharpDX.DXGI.pdb",
+        "lib/netstandard1.1/SharpDX.DXGI.xml",
+        "lib/uap10.0/SharpDX.DXGI.dll",
+        "lib/uap10.0/SharpDX.DXGI.pdb",
+        "lib/uap10.0/SharpDX.DXGI.pri",
+        "lib/uap10.0/SharpDX.DXGI.xml",
+        "sharpdx.dxgi.4.2.0.nupkg.sha512",
+        "sharpdx.dxgi.nuspec"
+      ]
+    },
+    "SharpDX.Mathematics/4.2.0": {
+      "sha512": "R2pcKLgdsP9p5WyTjHmGOZ0ka0zASAZYc6P4L6rSvjYhf6klGYbent7MiVwbkwkt9dD44p5brjy5IwAnVONWGw==",
+      "type": "package",
+      "path": "sharpdx.mathematics/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SharpDX.Mathematics.dll",
+        "lib/net40/SharpDX.Mathematics.pdb",
+        "lib/net40/SharpDX.Mathematics.xml",
+        "lib/net45/SharpDX.Mathematics.dll",
+        "lib/net45/SharpDX.Mathematics.pdb",
+        "lib/net45/SharpDX.Mathematics.xml",
+        "lib/netstandard1.1/SharpDX.Mathematics.dll",
+        "lib/netstandard1.1/SharpDX.Mathematics.pdb",
+        "lib/netstandard1.1/SharpDX.Mathematics.xml",
+        "lib/uap10.0/SharpDX.Mathematics.dll",
+        "lib/uap10.0/SharpDX.Mathematics.pdb",
+        "lib/uap10.0/SharpDX.Mathematics.pri",
+        "lib/uap10.0/SharpDX.Mathematics.xml",
+        "sharpdx.mathematics.4.2.0.nupkg.sha512",
+        "sharpdx.mathematics.nuspec"
+      ]
+    },
+    "System.ValueTuple/4.5.0": {
+      "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "type": "package",
+      "path": "system.valuetuple/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.ValueTuple.dll",
+        "lib/net461/System.ValueTuple.xml",
+        "lib/net47/System.ValueTuple.dll",
+        "lib/net47/System.ValueTuple.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.ValueTuple.dll",
+        "lib/netstandard1.0/System.ValueTuple.xml",
+        "lib/netstandard2.0/_._",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.ValueTuple.dll",
+        "ref/net47/System.ValueTuple.dll",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/_._",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.valuetuple.4.5.0.nupkg.sha512",
+        "system.valuetuple.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "ThreeDssViewer/1.0.0": {
+      "type": "project",
+      "path": "../ThreeDssViewer/ThreeDssViewer.csproj",
+      "msbuildProject": "../ThreeDssViewer/ThreeDssViewer.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.5": [
+      "Fody >= 6.2.4",
+      "PropertyChanged.Fody >= 3.2.8",
+      "SharpDX.Direct2D1 >= 4.2.0",
+      "SharpDX.Direct3D11 >= 4.2.0",
+      "SharpDX.Mathematics >= 4.2.0",
+      "System.ValueTuple >= 4.5.0",
+      "ThreeDssViewer >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\astat\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\astat\\Documents\\helix-toolkit\\Source\\Examples\\WPF.SharpDX\\SimpleDemo\\SimpleDemo.csproj",
+      "projectName": "SimpleDemo",
+      "projectPath": "C:\\Users\\astat\\Documents\\helix-toolkit\\Source\\Examples\\WPF.SharpDX\\SimpleDemo\\SimpleDemo.csproj",
+      "packagesPath": "C:\\Users\\astat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\astat\\Documents\\helix-toolkit\\Source\\Examples\\WPF.SharpDX\\SimpleDemo\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\astat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net45"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net45": {
+          "projectReferences": {
+            "C:\\Users\\astat\\Documents\\helix-toolkit\\Source\\Examples\\WPF.SharpDX\\ThreeDssViewer\\ThreeDssViewer.csproj": {
+              "projectPath": "C:\\Users\\astat\\Documents\\helix-toolkit\\Source\\Examples\\WPF.SharpDX\\ThreeDssViewer\\ThreeDssViewer.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net45": {
+        "dependencies": {
+          "Fody": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.2.4, )"
+          },
+          "PropertyChanged.Fody": {
+            "target": "Package",
+            "version": "[3.2.8, )"
+          },
+          "SharpDX.Direct2D1": {
+            "target": "Package",
+            "version": "[4.2.0, )"
+          },
+          "SharpDX.Direct3D11": {
+            "target": "Package",
+            "version": "[4.2.0, )"
+          },
+          "SharpDX.Mathematics": {
+            "target": "Package",
+            "version": "[4.2.0, )"
+          },
+          "System.ValueTuple": {
+            "target": "Package",
+            "version": "[4.5.0, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

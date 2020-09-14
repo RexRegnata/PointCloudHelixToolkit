@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "kErZ0DnhybPu/B2nF2zkNcURpCx2yhBRka3Jn48UVcQX9huituKP4iqDnTCFs7BO9Gdlh+LSJ/YjdeMfH6NFsA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\astat\\Documents\\helix-toolkit\\Source\\Examples\\WPF.SharpDX\\SimpleDemo\\SimpleDemo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\astat\\.nuget\\packages\\fody\\6.2.4\\fody.6.2.4.nupkg.sha512",
+    "C:\\Users\\astat\\.nuget\\packages\\propertychanged.fody\\3.2.8\\propertychanged.fody.3.2.8.nupkg.sha512",
+    "C:\\Users\\astat\\.nuget\\packages\\sharpdx\\4.2.0\\sharpdx.4.2.0.nupkg.sha512",
+    "C:\\Users\\astat\\.nuget\\packages\\sharpdx.direct2d1\\4.2.0\\sharpdx.direct2d1.4.2.0.nupkg.sha512",
+    "C:\\Users\\astat\\.nuget\\packages\\sharpdx.direct3d11\\4.2.0\\sharpdx.direct3d11.4.2.0.nupkg.sha512",
+    "C:\\Users\\astat\\.nuget\\packages\\sharpdx.dxgi\\4.2.0\\sharpdx.dxgi.4.2.0.nupkg.sha512",
+    "C:\\Users\\astat\\.nuget\\packages\\sharpdx.mathematics\\4.2.0\\sharpdx.mathematics.4.2.0.nupkg.sha512",
+    "C:\\Users\\astat\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
