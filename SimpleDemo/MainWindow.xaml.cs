@@ -14,6 +14,9 @@ namespace SimpleDemo
     using System.Windows;
     using HelixToolkit.Wpf.SharpDX;
     using SharpDX;
+    using Microsoft.Win32;
+    using System.IO;
+    using DemoCore;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -22,7 +25,6 @@ namespace SimpleDemo
     {
         public MainWindow()
         {
-            
 
             this.InitializeComponent();
             Closed += (s, e) =>
@@ -34,7 +36,26 @@ namespace SimpleDemo
                 }
             };
         }
-        static NVOptimusEnabler nvEnabler = new NVOptimusEnabler();
-    }
+        static NVOptimusEnabler nvEnabler = new NVOptimusEnabler();     
 
+
+        private void btnOpenFile_Click(object sender, RoutedEventArgs e)
+        {
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                mainViewModel.filepath = openFileDialog.FileName;
+            txtFile.Text = openFileDialog.FileName;
+            //mainViewModel.dataFromTxt(mainViewModel.filepath,mainViewModel.positionX, mainViewModel.positionY, mainViewModel.positionZ);
+            
+        }
+        private void btnDisplayFile_Click(object sender, RoutedEventArgs e)
+        {
+                       
+           
+
+        }
+
+
+    }
 }
