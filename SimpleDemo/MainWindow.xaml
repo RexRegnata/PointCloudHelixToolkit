@@ -5,42 +5,50 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:hx="http://helix-toolkit.org/wpf/SharpDX"
     xmlns:local="clr-namespace:SimpleDemo"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:sdxm="clr-namespace:SharpDX;assembly=SharpDX.Mathematics"
-    xmlns:sys="clr-namespace:System;assembly=mscorlib"
-    Title="SharpDX in WPF"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
+    Title="Point cloud visualization"
     Width="1280"
     Height="720"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Background="#FF465065" Foreground="#FFFFFEFE">
     <Window.DataContext>
-        <local:MainViewModel />
+        <local:MainViewModel x:Name="mainViewModel" />
     </Window.DataContext>
     <Window.Resources>
         <hx:RenderTechniqueConverter x:Key="RenderTechniqueConverter" />
     </Window.Resources>
-    <Grid>
+    <Grid Background="#FF88AFF3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="500*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Menu Grid.Row="0" VerticalAlignment="Top">
+        <Menu Grid.Row="0" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,72,0">
             <Menu.Background>
-                <SolidColorBrush Opacity="0.5" Color="WhiteSmoke" />
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2D2D30"/>
+                    <GradientStop Color="#FF88AFF3" Offset="0.258"/>
+                </LinearGradientBrush>
             </Menu.Background>
             <MenuItem Header="View">
                 <MenuItem Command="hx:ViewportCommands.ZoomExtents" Header="Zoom extents" />
                 <MenuItem Command="{Binding UpXCommand}" Header="Up Dir X" />
                 <MenuItem Command="{Binding UpYCommand}" Header="Up Dir Y" />
                 <MenuItem Command="{Binding UpZCommand}" Header="Up Dir Z" />
+                <MenuItem Command="{Binding filepath}" Header="Load file"/>
             </MenuItem>
+
+
         </Menu>
 
         <hx:Viewport3DX
             x:Name="view1"
             Title="{Binding Title}"
-            Grid.Row="1"
             BackgroundColor="Black"
             Camera="{Binding Camera}"
             CoordinateSystemLabelForeground="#434343"
@@ -50,13 +58,14 @@
             ShowViewCube="False"
             ShowCoordinateSystem="True"
             SubTitle="{Binding SubTitle}"
-            TextBrush="#FFFEFFF6"   
-EnableD2DRendering="False"
-EnableSwapChainRendering="True"
+            TextBrush="#FFFEFFF6"
+            EnableSwapChainRendering="True" 
+            EnableD2DRendering="False"
             FXAALevel="Low"
             EnableDeferredRendering="False"   
-            ClipToBounds="False"
+            ClipToBounds="False" Margin="6,0,0,0" CameraRotationMode="Turnball" CoordinateSystemHorizontalPosition="0" IsThreeFingerPanningEnabled="False" IsTouchRotateEnabled="False" IsViewCubeMoverEnabled="False" IsCoordinateSystemMoverEnabled="False" OITWeightMode="NonLinear" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2"
             >
+            <!-- WAŻNE POCZYTAJ SE NA STACKOVERFLOW HEHE  -->
 
             <hx:Viewport3DX.InputBindings>
 
@@ -97,41 +106,8 @@ EnableSwapChainRendering="True"
              IsDepthClipEnabled="False" IsEnabled="False" IsHitTestVisible="False" IsMultisampleEnabled="False" IsScissorEnabled="False" Size="1.5,1" FixedSize="True"
                 />
         </hx:Viewport3DX>
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            
-            <Expander
-                Width="150"
-                Margin="10"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                BorderBrush="LightGray"
-                Header="Instancing"
-                IsExpanded="True">
-                <Expander.Background>
-                    <SolidColorBrush Opacity="0.25" Color="WhiteSmoke" />
-                </Expander.Background>
-               
-                                
-                <StackPanel>
-                    <CheckBox  Margin="4" IsChecked="{Binding IsRendering, ElementName=arrows}">
-                        Render Arrows
-                    </CheckBox>
-                    <CheckBox Margin="4" IsChecked="{Binding IsRendering, ElementName=points}">
-                        Render Points
-                    </CheckBox>
-                    <CheckBox Margin="4" IsChecked="{Binding IsRendering, ElementName=grid}">
-                        Render Grid
-                    </CheckBox>
-                    <TextBlock Margin="4" FontSize="10" Foreground="WhiteSmoke" Background="Black"  Height="81" Opacity="0.25">        
-                        Instrukcje: <LineBreak/>
-                        BLABLA
 
-                    </TextBlock>
-                </StackPanel>
-            </Expander>
-        </StackPanel>
-
-        <StatusBar Grid.Row="2" VerticalAlignment="Bottom">
+        <StatusBar Grid.Row="2" VerticalAlignment="Bottom" Grid.ColumnSpan="3">
             <StatusBar.Background>
                 <SolidColorBrush Opacity="0.5" Color="WhiteSmoke" />
             </StatusBar.Background>
@@ -158,6 +134,79 @@ EnableSwapChainRendering="True"
                 <TextBlock Text="{Binding Items.Count, ElementName=view1, StringFormat=Children: \{0\}}" />
             </StatusBarItem>
         </StatusBar>
+
+        <Button Content="LOAD DATA" HorizontalAlignment="Left" Margin="10,20,0,0" Grid.Row="1" VerticalAlignment="Top" Width="174"
+                RenderTransformOrigin="0.8,0.475" Height="40" Foreground="White" FontFamily="Segoe UI Semibold" 
+                FontSize="20" Background="#FF3072E6" Click="btnOpenFile_Click"  Command="{Binding Path=OpenCommand}" 
+                >
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3072E6" Offset="0.419"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#7F3072E6" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform />
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="DISPLAY" HorizontalAlignment="Left" Margin="10,140,0,0" Grid.Row="1" VerticalAlignment="Top" Width="174"
+                RenderTransformOrigin="0.8,0.475" Height="40" Foreground="White" FontFamily="Segoe UI Semibold" 
+                FontSize="20" Background="#FF3072E6" Click="btnDisplayFile_Click" Command="{Binding Path=DisplayCommand}"
+                >
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3072E6" Offset="0.419"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#7F3072E6" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform />
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="CLEAR" HorizontalAlignment="Left" Margin="10,200,0,0" Grid.Row="1" VerticalAlignment="Top" Width="174"
+                RenderTransformOrigin="0.8,0.475" Height="40" Foreground="White" FontFamily="Segoe UI Semibold" 
+                FontSize="20" Background="#FF3072E6" Command="{Binding Path= ClearCommand}"
+                >
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3072E6" Offset="0.419"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#7F3072E6" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform />
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <ComboBox HorizontalAlignment="Left" Margin="10,320,0,0" Grid.Row="1" VerticalAlignment="Top" Width="174">
+            <ComboBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3F3F46" Offset="0.2"/>
+                    <GradientStop Color="{DynamicResource {x:Static SystemColors.MenuColorKey}}"/>
+                </LinearGradientBrush>
+            </ComboBox.Foreground>
+            <ComboBoxItem Content="Głębokość" HorizontalAlignment="Left" Width="172" IsSelected="True"/>
+            <ComboBoxItem Content="Intesywność" HorizontalAlignment="Left" Width="172"/>
+        </ComboBox>
+        <Image HorizontalAlignment="Left" Height="49" Margin="10,260,0,0" Grid.Row="1" VerticalAlignment="Top" Width="174" RenderTransformOrigin="0.468,0.592"/>
+        <TextBlock Name="txtFile" HorizontalAlignment="Left" Margin="10,65,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Selected File:" VerticalAlignment="Top" Height="56" Width="174"/>
 
     </Grid>
 </Window>
